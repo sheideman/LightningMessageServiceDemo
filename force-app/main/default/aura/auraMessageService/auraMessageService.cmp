@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="messages" type="List"/>
+    <lightning:messageChannel aura:id="messageChannel" type="messageDemo__c" onMessage="{!c.messageHandler}" scope="APPLICATION"/>
+
+        <lightning:card title="Aura Message Channel">
+            <div class="slds-p-around_medium">
+                <aura:iteration items="{!v.messages}" var="message">
+                    <div key="{!message.id}" class="message">
+                        {!message.from} > {!message.value}
+                    </div>
+                </aura:iteration>
+
+            </div>
+            <div class="slds-p-around_medium">
+                <lightning:layout>
+                    <lightning:layoutItem size="9" class="slds-m-right_medium">
+                        <lightning:input aura:id="inputElement"></lightning:input>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="3" class="slds-m-right_medium">
+                        <lightning:button onclick="{!c.handleSendMessage}" label="Send" iconName="utility:send" variant="brand"></lightning:button>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </lightning:card>
+</aura:component>	
