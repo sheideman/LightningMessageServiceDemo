@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Don't Talk, Just Listen...">
+        <div class="slds-p-around_medium">
+           <template for:each={messages} for:item="message">
+               <div key={message.id} class="message">
+                   {message.from} > {message.value}
+               </div>
+           </template>
+        </div>
+    
+    </lightning-card>
+</template>
