@@ -25,7 +25,7 @@
             messages.push({
                 id: messages.length,
                 value: msg,
-                from: "lwc-message-service"
+                from: "aura-message-service"
             });
             component.set("v.messages", messages);
         }
