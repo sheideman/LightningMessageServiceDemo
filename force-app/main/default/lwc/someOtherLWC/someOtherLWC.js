@@ -3,7 +3,8 @@ import messageDemo from "@salesforce/messageChannel/messageDemo__c";
 import { MessageContext, subscribe, unsubscribe } from "lightning/messageService"
 export default class LwcMessageService extends LightningElement {
     @track messages = [];
-    @wire(MessageContext) msgContext;
+    @wire(MessageContext) 
+    msgContext;
     subscription = null;
     connectedCallback() {
         if (!this.subscription) {
